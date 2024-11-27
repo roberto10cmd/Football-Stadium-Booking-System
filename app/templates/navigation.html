@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-ligh fixed-top">
+        <img src="{% static 'images/logo.jpeg' %}" style="width: 4vw; min-width: 10px;"/>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto"> {# Utilizăm clasa ml-auto pentru a muta lista în partea dreaptă #}
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+             
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'adminpage' %}">Admin</a>
+                </li>
+               
+
+                
+                {% if not request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_login' %}">Login</a>
+                    </li>
+                {% endif %}
+                
+        </div>
+        {% if request.user.is_authenticated %}
+            <span class="hello-msg"> Hello, {{request.user}}</span>
+            <span><a class="hello-msg" href="{% url 'logout_user' %}">LogOut</a></span>
+        {% endif %}
+    </nav>
+</body>
+</html>

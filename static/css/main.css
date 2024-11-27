@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #63c32c; /* Schimbă această valoare cu culoarea dorită */
+    /* Alte stiluri pentru navbar pot fi adăugate aici */
+    margin-top: -20px; /* Ajustați valoarea după necesitate */
+}
+
+.hello-msg {
+    font-size: 18px;
+    color: #f1e7e7;
+    margin-right: 20px;
+}
+
+.footer-bottom {
+    background-color: #63c32c; /* Schimbă această valoare cu culoarea dorită pentru footer */
+    /* padding: 10px; Adaugă sau ajustează spațiul interior al footer-ului după necesitate */
+    margin-top: -20px; /* Ajustați valoarea după necesitate */
+}
